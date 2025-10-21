@@ -2,8 +2,9 @@
 #include <chrono>
 using namespace  std;
 using clk=chrono::high_resolution_clock;
+#include <string>
 
-void sll_observe(Sll* obj, void (Sll::*method)(), string msg){
+void CSLL_observe(CSll* obj, void (Sll::*method)(), string msg){
     auto t0 = clk::now();
 
     (obj->*method)(); // perform operation
