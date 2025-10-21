@@ -34,10 +34,10 @@ class CSLL{
         void printCSLL(){
             current = head;
             while(current->next!= head){
-                cout<<current->data;
-                if(current->next!= tail){
-                    cout<<" -> ";
-                }
+                // cout<<current->data;
+                // if(current->next!= tail){
+                //     cout<<" -> ";
+                // }
                 current = current->next;
             }
             cout<<endl;
@@ -52,6 +52,6 @@ void CSLL_observe(CSLL* obj, void (CSLL::*method)(), string msg){
 
     auto t1 = clk::now();
 
-    auto duration = chrono::duration_cast<chrono::nanoseconds>(t1 - t0);
-    cout<<msg <<": "<<duration.count() <<" nanosecond(s)" <<endl;
+    auto duration = chrono::duration_cast<chrono::microseconds>(t1 - t0);
+    cout<<msg <<": "<<duration.count() <<" mircorsecond(s)" <<endl;
 }

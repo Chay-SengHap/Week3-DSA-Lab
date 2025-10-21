@@ -15,9 +15,10 @@ class SLL{
         current = head;
         while(current)
         {
-            cout << current << "-> " << endl;
+          
             current = current->next;
         }
+        cout<<"NUll" <<endl;
     }
     void insertFront(int value){
         SNode* newNode = new SNode(value);
@@ -38,6 +39,6 @@ void SLL_observe(SLL* obj, void (SLL::*method)(), string msg){
 
     auto t1 = clk::now();
 
-    auto duration = chrono::duration_cast<chrono::nanoseconds>(t1 - t0);
-    cout<<msg <<": "<<duration.count() <<" nanosecond(s)" <<endl;
+    auto duration = chrono::duration_cast<chrono::microseconds>(t1 - t0);
+    cout<<msg <<": "<<duration.count() <<" microsecond(s)" <<endl;
 }
