@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include<iostream>
 #include<chrono>
 using namespace std;
@@ -51,4 +52,6 @@ class DLL{
 
 
 
+=======
+>>>>>>> d432906f8069bda819cb7932d6f54423ce21b5c9
 
