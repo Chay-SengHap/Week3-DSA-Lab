@@ -1,6 +1,9 @@
-<<<<<<< HEAD
+
 #include<iostream>
 #include<chrono>
+#include <string>
+using namespace  std;
+using clk=chrono::high_resolution_clock;
 using namespace std;
 
 class DLL{
@@ -50,8 +53,15 @@ class DLL{
 
 };
 
+void DLL_observe(DLL* obj, void (DLL::*method)(), string msg){
+    auto t0 = clk::now();
 
+    (obj->*method)(); // perform operation
 
-=======
->>>>>>> d432906f8069bda819cb7932d6f54423ce21b5c9
+    auto t1 = clk::now();
+
+    auto duration = chrono::duration_cast<chrono::nanoseconds>(t1 - t0);
+    cout<<msg <<": "<<duration.count() <<" nanosecond(s)" <<endl;
+}
+
 
