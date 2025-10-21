@@ -1,8 +1,9 @@
-#include "node.hpp";
+#include "node.hpp"
 #include <chrono>
 using namespace  std;
 using clk=chrono::high_resolution_clock;
 #include <string>
+#include <iostream>
 
 void CSLL_observe(CSll* obj, void (CSll::*method)(), string msg){
     auto t0 = clk::now();
@@ -22,14 +23,14 @@ class CSLL{
         Node* tail;
         Node* current;
         int size;
-        csll(){
+        CSLL(){
             head = nullptr;
             tail = nullptr;
             size = 0;
         }
         void insertFront(int value){
 
-            SNode* newNode = new Node()
+            SNode* newNode = new Node(value);
             if(size == 0){
                 head = newNode; 
                 tail = head;      
@@ -37,6 +38,7 @@ class CSLL{
             newNode->next =head;
             head = newNode;
             tail->next = head;
+            size++;
         }
         void printCSLL(){
             current = head;
@@ -47,6 +49,7 @@ class CSLL{
                 }
                 current = current->next;
             }
+            cout<<endl;
 
         }
 
