@@ -4,7 +4,7 @@ using namespace  std;
 using clk=chrono::high_resolution_clock;
 #include <string>
 
-void CSLL_observe(CSll* obj, void (Sll::*method)(), string msg){
+void CSLL_observe(CSll* obj, void (CSll::*method)(), string msg){
     auto t0 = clk::now();
 
     (obj->*method)(); // perform operation
