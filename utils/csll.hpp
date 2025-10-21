@@ -5,16 +5,7 @@ using clk=chrono::high_resolution_clock;
 #include <string>
 #include <iostream>
 
-void CSLL_observe(CSll* obj, void (CSll::*method)(), string msg){
-    auto t0 = clk::now();
 
-    (obj->*method)(); // perform operation
-
-    auto t1 = clk::now();
-
-    auto duration = chrono::duration_cast<chrono::nanoseconds>(t1 - t0);
-    cout<<msg <<": "<<duration.count() <<" nanosecond(s)" <<endl;
-}
 
 class CSLL{
     public:
@@ -53,4 +44,14 @@ class CSLL{
 
         }
 
+};
+void CSLL_observe(CSLL* obj, void (CSLL::*method)(), string msg){
+    auto t0 = clk::now();
+
+    (obj->*method)(); // perform operation
+
+    auto t1 = clk::now();
+
+    auto duration = chrono::duration_cast<chrono::nanoseconds>(t1 - t0);
+    cout<<msg <<": "<<duration.count() <<" nanosecond(s)" <<endl;
 }
