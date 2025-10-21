@@ -10,9 +10,9 @@ using clk=chrono::high_resolution_clock;
 class CSLL{
     public:
         int data;
-        Node* head;
-        Node* tail;
-        Node* current;
+        SNode* head;
+        SNode* tail;
+        SNode* current;
         int size;
         CSLL(){
             head = nullptr;
@@ -21,7 +21,7 @@ class CSLL{
         }
         void insertFront(int value){
 
-            SNode* newNode = new Node(value);
+            SNode* newNode = new SNode(value);
             if(size == 0){
                 head = newNode; 
                 tail = head;      
