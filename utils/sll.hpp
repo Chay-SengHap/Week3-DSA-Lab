@@ -19,6 +19,16 @@ class SLL{
             current = current->next;
         }
     }
+    void insertFront(int value){
+        SNode* newNode = new SNode(value);
+        if(!head){
+            head = newNode;
+            return;
+        }
+        newNode->next = head;
+        head = newNode;
+        size++;
+    }
 };
 
 void SLL_observe(SLL* obj, void (SLL::*method)(), string msg){
