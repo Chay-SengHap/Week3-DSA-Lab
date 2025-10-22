@@ -188,10 +188,3 @@ void SLL_observe(SLL* obj, void (SLL::*method)(), string mssg){
     cout<<mssg <<": "<<duration.count() <<" microsecond(s)" <<endl;
 }
 
-void SLL_Observe(function<void()> func, string mssg) {
-    auto t0 = clk::now();
-    func(); 
-    auto t1 = clk::now();
-    auto duration = chrono::duration_cast<chrono::nanoseconds>(t1 - t0);
-    cout << mssg << ": " << duration.count() << " nanosecond(s)" << endl;
-}

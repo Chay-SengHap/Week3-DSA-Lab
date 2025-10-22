@@ -14,7 +14,9 @@ int main()
 
     SLL list;
     cout << "Sll performent" << endl;
-    SLL_Observe([&list]() { list.insertFront(42); }, "Insert 42");
+    SLL_observe(&list, list.insertFront,"Insert Front"); 
+    SLL_observe(&list, list.pop_frontNoTail, "delete front"); 
+
 
 
     
