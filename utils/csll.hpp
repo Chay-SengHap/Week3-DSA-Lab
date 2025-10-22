@@ -19,6 +19,14 @@ class CSLL{
             tail = nullptr;
             size = 0;
         }
+        void measureAllocation()
+        {
+            int n = 100000;
+            for (int i = 0; i < n; i++)
+            {
+                insertFront(i);
+            }
+        }
         void insertFront(int value){
 
             SNode* newNode = new SNode(value);
@@ -42,6 +50,21 @@ class CSLL{
             }
             cout<<endl;
 
+        }
+        // A5
+        void rotateRightCSLL(){
+            int k = 10;
+            if(!head || k==0 || k%size == 0 ){
+                return;
+            }
+            k = k % size;
+
+            int step = size - k ;
+
+            for(int i = 0 ; i < step ; i++){
+                head = head->next;
+                tail = tail->next;
+            }
         }
 
 };

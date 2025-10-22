@@ -16,14 +16,14 @@ int main(){
     }
     for(int i = 0 ; i < 5 ; i++){
 
-        CSLL_observe(&csll, csll.printCSLL,"csll");
+        CSLL_observe(&csll, csll.insertFront,"csll");
     }
     for(int i = 0 ; i<100; i++){
         sll.insertFront(i);
     }
     for(int i = 0 ; i < 5 ; i++){
 
-        SLL_observe(&sll, sll.printSLL,"sll");
+        SLL_observe(&sll, sll.rotateRightSLL,"sll");
     }
     return 0;
 }
